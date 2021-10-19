@@ -1,0 +1,51 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+/*
+SPACING SYSTEM
+2/ 4/ 8/ 12/ 16/ 24/ 32/ 48/ 64/ 80/ 96/ 128/
+
+
+FONT SIZE SYSTEM
+10/ 12/ 14/ 16/ 18/ 20/ 24/ 30/ 36/ 44/ 52/ 62/ 74/ 86/ 98/
+*/
+
+.search-todo {
+  padding: 32px 0px;
+  position: relative;
+
+  &__input {
+    width: 700px;
+    padding: 12px 165px 12px 24px;
+    font-size: 20px;
+    border-radius: 30px;
+    font-family: $roboto-medium;
+    border: 3px solid $star-command-blue;
+    color: $gunmetal;
+    font-weight: 500;
+    box-shadow: 0px 0px 24px $ligth-gray;
+  }
+
+  &__input:focus {
+    outline: $star-command-blue;
+  }
+
+  &__button {
+    position: absolute;
+    right: 6px;
+    top: 37px;
+    border-radius: 30px;
+    height: 44px;
+    width: 150px;
+    background: $star-command-blue;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__icon {
+    width: 44px;
+    stroke: $white;
+  }
+}

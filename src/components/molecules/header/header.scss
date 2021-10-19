@@ -1,0 +1,25 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+/*
+SPACING SYSTEM
+2/ 4/ 8/ 12/ 16/ 24/ 32/ 48/ 64/ 80/ 96/ 128/
+
+
+FONT SIZE SYSTEM
+10/ 12/ 14/ 16/ 18/ 20/ 24/ 30/ 36/ 44/ 52/ 62/ 74/ 86/ 98/
+*/
+
+.header {
+  padding: 96px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  &__title {
+    font-family: $roboto-bold;
+    font-size: 62px;
+    color: $star-command-blue;
+  }
+}
