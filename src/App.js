@@ -4,6 +4,8 @@ import './styles/index.scss';
 
 import Header from './components/molecules/header/header';
 import SearchTodo from './components/molecules/search-todo/search-todo';
+import ToDoItems from './components/organisms/to-do-items/toDoItems';
+import ToDoItem from './components/molecules/to-do-item/toDoItem';
 
 function App() {
   let [ searchTodo, setSearchTodo ] = useState('');
@@ -11,7 +13,6 @@ function App() {
 
   const setSearchTodoHandler = (event) => {
     const { value } = event.target;
-    console.log(value)
     setSearchTodo(value);
   }
 
@@ -27,6 +28,21 @@ function App() {
         cleanSearchTodo={cleanSearchTodo}
         />
       </Header>
+
+        <ToDoItems 
+        toDoItems={Array(5).fill(0)}
+        >
+          {
+            item => {
+              return(
+                <ToDoItem 
+                key={Math.random()}
+                content={``}
+                />
+              )
+            }
+          }
+        </ToDoItems>
     </div>
   );
 }
