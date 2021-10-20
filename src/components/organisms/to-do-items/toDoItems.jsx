@@ -1,13 +1,16 @@
 import React from 'react';
 import './toDoItems.scss';
 
-const ToDoItems = ({children,
-    toDoItems,   
-}) => {
+const ToDoItems = ({ children, toDoItems, filteredToDos }) => {
+    let [ filteredToDosList, isFiltering ] = filteredToDos;
+
     return(
         <main className='todo-items'>
             {
-                toDoItems.map(children)
+                filteredToDosList.length > 0 && (isFiltering) && filteredToDosList.map(children)
+            }
+            {
+                (!isFiltering) && toDoItems.map(children)
             }   
         </main>
     );

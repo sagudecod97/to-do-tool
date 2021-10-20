@@ -54,4 +54,12 @@ FONT SIZE SYSTEM
   &__close {
     stroke: #ff0000;
   }
+
+  .--done {
+    background-color: $sky-blue-crayola;
+  }
+}
+
+.--done {
+  background-color: rgba($sky-blue-crayola, 0.2);
 }
