@@ -1,11 +1,24 @@
 import React from 'react';
 import './toDoItem.scss';
 
-const ToDoItem = ({ content }) => {
+const ToDoItem = ({ content, id, deleteToDo, setIsDone, isDone }) => {
+    const deleteToDoHandler = () => {
+        deleteToDo(id)
+    };
+
+    const setIsDoneHandler = () => {
+        setIsDone(id);
+    }
+
     return(
-        <div className='todo-item'>
+        <div
+        className={`todo-item ${isDone ? '--done': ''}`}
+        >
             <p className='todo-item__content'>{content}</p>
-            <button className='todo-item__btn --close'>
+            <button
+            onClick={deleteToDoHandler}
+            className={`todo-item__btn --close ${isDone ? '--done': ''}`}
+            >
                 <svg 
                 xmlns="http://www.w3.org/2000/svg"
                 class="todo-item__close"
@@ -16,7 +29,10 @@ const ToDoItem = ({ content }) => {
                 </svg>
             </button>
 
-            <button className='todo-item__btn --check'>
+            <button
+            onClick={setIsDoneHandler}
+            className={`todo-item__btn --check ${isDone ? '--done': ''}`}
+            >
                 <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="todo-item__check"

@@ -2,6 +2,8 @@ import './App.css';
 import React, { useState } from 'react';
 import './styles/index.scss';
 
+import UseLocalStorage from './hooks/useLocalStorage';
+
 import Header from './components/molecules/header/header';
 import SearchTodo from './components/molecules/search-todo/search-todo';
 import ToDoItems from './components/organisms/to-do-items/toDoItems';
@@ -14,9 +16,19 @@ function App() {
   let [ searchTodo, setSearchTodo ] = useState('');
   let [ modalOpen, setModalOpen ] = useState(false);
 
+  let { 
+    toDos,
+    filteredToDosArr,
+    setNewToDo,
+    deleteToDo,
+    newFilteredTodos,
+    checkAsDone,
+    loading
+  } = UseLocalStorage();
 
   const setSearchTodoHandler = (event) => {
     const { value } = event.target;
+    newFilteredTodos(value);
     setSearchTodo(value);
   }
 
@@ -36,14 +48,19 @@ function App() {
       </Header>
 
       <ToDoItems 
-      toDoItems={Array(5).fill(0)}
+      toDoItems={toDos}
+      filteredToDos={filteredToDosArr}
       >
         {
           item => {
             return(
               <ToDoItem 
-              key={Math.random()}
-              content={``}
+              key={item.id}
+              id={item.id}
+              isDone={item.isDone}
+              setIsDone={checkAsDone}
+              deleteToDo={deleteToDo}
+              content={item.todo}
               />
             )
           }
@@ -60,7 +77,7 @@ function App() {
         modalOpen && (
           <AddModal
           closeModal={toggleModal}
-          createTodo={(info) => console.log(info)}
+          createTodo={setNewToDo}
           />
         )
       }
