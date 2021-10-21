@@ -23,6 +23,16 @@ FONT SIZE SYSTEM
   overflow: hidden;
   overflow-y: auto;
   padding-top: 24px;
+
+  @include from($medium) {
+    width: 95%;
+    height: 57vh;
+    padding-bottom: 8vh;
+  }
+
+  @include from($s-small) {
+    padding-bottom: 12vh;
+  }
 }
 
 .todo-items::-webkit-scrollbar {
