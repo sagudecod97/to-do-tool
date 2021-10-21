@@ -20,11 +20,16 @@ FONT SIZE SYSTEM
   border-radius: 5px;
   box-shadow: 0px 0px 12px $state-gray;
 
+  @include from($medium) {
+    width: 90%;
+  }
+
   &__content {
     padding: 2px 0;
     font-size: 24px;
     font-family: $roboto-regular;
     text-align: start;
+    word-wrap: break-word;
   }
 
   &__btn {
@@ -45,6 +50,10 @@ FONT SIZE SYSTEM
   .--close {
     top: -25px;
     right: 8%;
+
+    @include from($medium) {
+      right: 60px;
+    }
   }
 
   &__check {

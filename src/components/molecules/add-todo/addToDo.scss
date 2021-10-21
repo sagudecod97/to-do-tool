@@ -19,4 +19,29 @@ FONT SIZE SYSTEM
   display: flex;
   justify-content: flex-end;
   padding: 12px 80px;
+
+  @include from($x-large) {
+    padding: 0;
+    height: 50px;
+  }
+
+  &__info {
+    display: flex;
+    width: 280px;
+    align-items: center;
+    justify-content: space-between;
+    font-family: $roboto-regular;
+    font-size: 20px;
+    margin: 0 auto;
+
+    @include from($s-medium) {
+      width: 100%;
+      justify-content: center;
+      gap: 5%;
+    }
+  }
+
+  &__name {
+    height: auto;
+  }
 }

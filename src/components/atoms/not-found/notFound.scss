@@ -19,11 +19,23 @@ FONT SIZE SYSTEM
     font-size: 52px;
     line-height: 1.2;
     color: $sky-blue-crayola;
+
+    @include from($s-medium) {
+      font-size: 44px;
+    }
+
+    @include from($s-small) {
+      font-size: 30px;
+    }
   }
 
   &__sad {
     width: 150px;
     stroke: $sky-blue-crayola;
     padding-top: 32px;
+
+    @include from($s-small) {
+      width: 110px;
+    }
   }
 }

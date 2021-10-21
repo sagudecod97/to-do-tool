@@ -17,6 +17,24 @@ FONT SIZE SYSTEM
   box-shadow: 0px 0px 6px $state-gray;
   background-color: $sky-blue-crayola;
   cursor: pointer;
+
+  @include from($x-large) {
+    position: absolute;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85px;
+    height: 85px;
+  }
+
+  @include from($s-medium) {
+    position: absolute;
+    bottom: 7vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 70px;
+  }
 }
 
 .add-btn__plus {
