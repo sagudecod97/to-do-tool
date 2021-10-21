@@ -11,6 +11,8 @@ import ToDoItem from './components/molecules/to-do-item/toDoItem';
 import AddToDo from './components/molecules/add-todo/addToDo';
 import AddBtn from './components/atoms/add-btn/addBtn';
 import AddModal from './components/molecules/add-modal/addModal';
+import EmptyTodo from './components/atoms/empty-todo/empty-todo';
+import NotFoundToDo from './components/atoms/not-found/notFound';
 
 function App() {
   let [ searchTodo, setSearchTodo ] = useState('');
@@ -50,6 +52,8 @@ function App() {
       <ToDoItems 
       toDoItems={toDos}
       filteredToDos={filteredToDosArr}
+      emptyTodos={() => <EmptyTodo />}
+      notFoundTodo={() => <NotFoundToDo />}
       >
         {
           item => {
