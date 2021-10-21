@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8a0b93dc.chunk.css",
+    "main.js": "/static/js/main.229de0ae.chunk.js",
+    "main.js.map": "/static/js/main.229de0ae.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.46330eb2.js",
+    "runtime-main.js.map": "/static/js/runtime-main.46330eb2.js.map",
+    "static/js/2.3e8d9f43.chunk.js": "/static/js/2.3e8d9f43.chunk.js",
+    "static/js/2.3e8d9f43.chunk.js.map": "/static/js/2.3e8d9f43.chunk.js.map",
+    "static/js/3.51c54f50.chunk.js": "/static/js/3.51c54f50.chunk.js",
+    "static/js/3.51c54f50.chunk.js.map": "/static/js/3.51c54f50.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.8a0b93dc.chunk.css.map": "/static/css/main.8a0b93dc.chunk.css.map",
+    "static/js/2.3e8d9f43.chunk.js.LICENSE.txt": "/static/js/2.3e8d9f43.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/static/media/Roboto-Regular.a8d6ac03.ttf",
+    "static/media/iconmonstr-github-1.04be58c1.svg": "/static/media/iconmonstr-github-1.04be58c1.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.46330eb2.js",
+    "static/js/2.3e8d9f43.chunk.js",
+    "static/css/main.8a0b93dc.chunk.css",
+    "static/js/main.229de0ae.chunk.js"
+  ]
+}
