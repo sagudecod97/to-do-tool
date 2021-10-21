@@ -84,7 +84,14 @@ const UseLocalStorage = () => {
         setIsLoading(false);
         setToDos(todosStorage);
        }, 3000)
-    }, [])
+
+       window.addEventListener('storage', () => {
+            let todosStorage = localStorage.getItem('TODOS_ARR');
+            todosStorage = JSON.parse(todosStorage);
+            setToDos(todosStorage);
+        })
+
+    }, [ toDos ])
 
     return({
         toDos,
