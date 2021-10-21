@@ -7,7 +7,7 @@ const EmptyTodo = () => {
             <h3
             className='empty-todo__title'
             >
-                There are not any to-do. <br/>
+                There is not any to-do. <br/>
                 What about adding some?
             </h3>
 

@@ -65,6 +65,11 @@ const UseLocalStorage = () => {
         setFilteredTodos(newToDos);
     }
 
+    const eraseFilterButton = () => {
+        setFilteredTodos([]);
+        setIsFiltering(false);
+    }
+
     useEffect(() => {
        setTimeout(() => {
         let todosStorage = localStorage.getItem('TODOS_ARR');
@@ -78,7 +83,7 @@ const UseLocalStorage = () => {
 
         setIsLoading(false);
         setToDos(todosStorage);
-       }, 2000)
+       }, 3000)
     }, [])
 
     return({
@@ -88,7 +93,8 @@ const UseLocalStorage = () => {
         deleteToDo,
         checkAsDone,
         newFilteredTodos,
-        loading
+        loading,
+        eraseFilterButton
     })
 };
 

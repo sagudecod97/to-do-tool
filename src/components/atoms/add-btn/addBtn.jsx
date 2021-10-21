@@ -1,11 +1,12 @@
 import React from './addBtn.scss';
 import './addBtn.scss';
 
-const AddBtn = ({ onClick, activeModal }) => {
+const AddBtn = ({ onClick, activeModal, loading }) => {
     return(
         <button 
         className={`add-btn ${activeModal ? '--rotated' : ''}`}
         onClick={onClick}
+        disabled={loading}
         >
             <svg
             xmlns="http://www.w3.org/2000/svg"

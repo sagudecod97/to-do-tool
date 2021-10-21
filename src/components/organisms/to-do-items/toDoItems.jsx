@@ -1,24 +1,39 @@
 import React from 'react';
 import './toDoItems.scss';
 
-const ToDoItems = ({ children, toDoItems, filteredToDos, emptyTodos, notFoundTodo }) => {
+const ToDoItems = ({ children, toDoItems, filteredToDos, emptyTodos, notFoundTodo, loading }) => {
     let [ filteredToDosList, isFiltering ] = filteredToDos;
 
-    console.log( isFiltering, filteredToDosList)
-    console.log(filteredToDosList.length === 0)
+    let loadingArray = () => {
+        let loadingArray = [];
+
+        for (let i = 0; i < 4; i++) {
+            loadingArray.push({
+                todo: '',
+                isDone: false,
+                id: Math.random() * 10,
+            })
+        }
+
+        return loadingArray;
+    }
+
     return(
         <main className='todo-items'>
             {
-                (isFiltering) && (filteredToDosList.length === 0) && notFoundTodo()
+                loading && loadingArray().map(children)
             }
             {
-                (toDoItems.length) === 0 && (!isFiltering) && emptyTodos()
+                (!loading) && (isFiltering) && (filteredToDosList.length === 0) && notFoundTodo()
             }
             {
-                (filteredToDosList.length > 0) && (isFiltering) && filteredToDosList.map(children)
+                (!loading) && (toDoItems.length) === 0 && (!isFiltering) && emptyTodos()
             }
             {
-                (!isFiltering) && (toDoItems.length > 0) && toDoItems.map(children)
+                (!loading) && (filteredToDosList.length > 0) && (isFiltering) && filteredToDosList.map(children)
+            }
+            {
+                (!loading) && (!isFiltering) && (toDoItems.length > 0) && toDoItems.map(children)
             }   
         </main>
     );

@@ -63,3 +63,25 @@ FONT SIZE SYSTEM
 .--done {
   background-color: rgba($sky-blue-crayola, 0.2);
 }
+
+.--loading-item {
+  animation-name: loading-item;
+  animation-duration: 4s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes loading-item {
+  25% {
+    background-color: rgba($sky-blue-crayola, 0.2);
+  }
+  50% {
+    background-color: $white;
+  }
+  75% {
+    background-color: rgba($sky-blue-crayola, 0.2);
+  }
+  100% {
+    background-color: $white;
+  }
+}

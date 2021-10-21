@@ -1,7 +1,7 @@
 import React from 'react';
 import './toDoItem.scss';
 
-const ToDoItem = ({ content, id, deleteToDo, setIsDone, isDone }) => {
+const ToDoItem = ({ content, id, deleteToDo, setIsDone, isDone, loading }) => {
     const deleteToDoHandler = () => {
         deleteToDo(id)
     };
@@ -12,7 +12,7 @@ const ToDoItem = ({ content, id, deleteToDo, setIsDone, isDone }) => {
 
     return(
         <div
-        className={`todo-item ${isDone ? '--done': ''}`}
+        className={`todo-item ${isDone ? '--done': ''} ${loading ? '--loading-item' : ''}`}
         >
             <p className='todo-item__content'>{content}</p>
             <button

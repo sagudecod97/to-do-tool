@@ -1,15 +1,16 @@
 import React from 'react';
 import './search-todo.scss';
 
-const SearchTodo = ({ searchTodo, setSearchTodo, cleanSearchTodo }) => {
+const SearchTodo = ({ searchTodo, setSearchTodo, cleanSearchTodo, loading }) => {
     return(
         <div className='search-todo'>
             <input
-            className='search-todo__input'
+            className={`search-todo__input ${loading ? '--loading-input' : ''}`}
             placeholder='Search any to-do'
             type='text'
             value={searchTodo}
             onChange={setSearchTodo}
+            disabled={loading}
             />
 
             {

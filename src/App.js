@@ -25,7 +25,8 @@ function App() {
     deleteToDo,
     newFilteredTodos,
     checkAsDone,
-    loading
+    loading,
+    eraseFilterButton,
   } = UseLocalStorage();
 
   const setSearchTodoHandler = (event) => {
@@ -37,12 +38,18 @@ function App() {
   const toggleModal = () => setModalOpen(!modalOpen);
 
 
-  const cleanSearchTodo = () => setSearchTodo('');
+  const cleanSearchTodo = () => {
+    setSearchTodo('');
+    eraseFilterButton();
+  };
 
   return (
     <div className="App">
-      <Header>
+      <Header
+      loading={loading}
+      >
         <SearchTodo
+        loading={loading}
         setSearchTodo={setSearchTodoHandler}
         searchTodo={searchTodo}
         cleanSearchTodo={cleanSearchTodo}
@@ -54,6 +61,7 @@ function App() {
       filteredToDos={filteredToDosArr}
       emptyTodos={() => <EmptyTodo />}
       notFoundTodo={() => <NotFoundToDo />}
+      loading={loading}
       >
         {
           item => {
@@ -65,6 +73,7 @@ function App() {
               setIsDone={checkAsDone}
               deleteToDo={deleteToDo}
               content={item.todo}
+              loading={loading}
               />
             )
           }
@@ -72,7 +81,8 @@ function App() {
       </ToDoItems>
 
       <AddToDo>
-        <AddBtn 
+        <AddBtn
+        loading={loading}
         onClick={toggleModal}
         />
       </AddToDo>

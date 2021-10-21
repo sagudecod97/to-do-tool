@@ -24,3 +24,25 @@ FONT SIZE SYSTEM
     color: $star-command-blue;
   }
 }
+
+.--loading {
+  animation-name: loading;
+  animation-duration: 4s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes loading {
+  25% {
+    color: $sky-blue-crayola;
+  }
+  50% {
+    color: $star-command-blue;
+  }
+  75% {
+    color: $sky-blue-crayola;
+  }
+  100% {
+    color: $star-command-blue;
+  }
+}
